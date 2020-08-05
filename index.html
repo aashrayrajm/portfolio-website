@@ -279,7 +279,7 @@
 			<div class="row mb-4">
 				<div class="col-md-12">
 					<div class="section-heading text-center">
-						<h2>My <strong>Services</strong></h2>
+						<h2>My <strong>Skills</strong></h2>
 					</div>
 				</div>
 			</div>
@@ -288,36 +288,57 @@
 				<div class="col-md-6 col-lg-4 text-center mb-5">
 					<div class="site-service-item site-animate" data-animate-effect="fadeIn">
 						<span class="icon">
-							<span class="icon-browser2"></span>
+							<span class="icon-laptop"></span>
 						</span>
-						<h3 class="mb-4">Product Design</h3>
+						<h3 class="mb-4">Arduino</h3>
 						<p>I build innovative product design ideas for better human life.</p>
-						<p><a href="#" class="site-link">Learn More <i class="icon-chevron-right"></i></a></p>
-					</div>
+						</div>
 				</div>
 				<div class="col-md-6 col-lg-4 text-center mb-5">
 					<div class="site-service-item site-animate" data-animate-effect="fadeIn">
 						<span class="icon">
-							<span class="icon-presentation"></span>
+							<span class="icon-tv"></span>
 						</span>
-						<h3 class="mb-4">Product Application</h3>
+						<h3 class="mb-4">Internet of Things (IOT)</h3>
 						<p>I build innovative product design ideas for better human life.</p>
-						<p><a href="#" class="site-link">Learn More <i class="icon-chevron-right"></i></a></p>
-					</div>
+						</div>
 				</div>
 				<div class="col-md-6 col-lg-4 text-center mb-5">
 					<div class="site-service-item site-animate" data-animate-effect="fadeIn">
 						<span class="icon">
-							<span class="icon-video2"></span>
+							<span class="icon-mobile"></span>
 						</span>
-						<h3 class="mb-4">Product Development</h3>
+						<h3 class="mb-4">Android Development</h3>
 						<p>I build innovative product design ideas for better human life.</p>
-						<p><a href="#" class="site-link">Learn More <i class="icon-chevron-right"></i></a></p>
-					</div>
+						</div>
 				</div>
-
-				
-
+				<div class="col-md-6 col-lg-4 text-center mb-5">
+					<div class="site-service-item site-animate" data-animate-effect="fadeIn">
+						<span class="icon">
+							<span class="icon-tv2"></span>
+						</span>
+						<h3 class="mb-4">Robotics</h3>
+						<p>I build innovative product design ideas for better human life.</p>
+						</div>
+				</div>
+				<div class="col-md-6 col-lg-4 text-center mb-5">
+					<div class="site-service-item site-animate" data-animate-effect="fadeIn">
+						<span class="icon">
+							<span class="icon-mobile2"></span>
+						</span>
+						<h3 class="mb-4">Application Testing</h3>
+						<p>I build innovative product design ideas for better human life.</p>
+						</div>
+				</div>
+				<div class="col-md-6 col-lg-4 text-center mb-5">
+					<div class="site-service-item site-animate" data-animate-effect="fadeIn">
+						<span class="icon">
+							<span class="icon-laptop2"></span>
+						</span>
+						<h3 class="mb-4">Raspberry Pi</h3>
+						<p>I build innovative product design ideas for better human life.</p>
+						</div>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -332,22 +353,22 @@
 				</div>
 
 				<div class="col-md-7 mb-5 mb-md-0">
-					<form action="" class="site-form">
+					<form action="#" id="test-form" class="site-form" name="google-sheet">
 						<h3 class="mb-5">Get In Touch</h3>
 						<div class="form-group">
-							<input type="text" class="form-control px-3 py-4" placeholder="Your Name">
+							<input type="text" name ="Your Name" class="form-control px-3 py-4" placeholder="Your Name">
 						</div>
 						<div class="form-group">
-							<input type="email" class="form-control px-3 py-4" placeholder="Your Email">
+							<input type="email" name ="Your Email" class="form-control px-3 py-4" placeholder="Your Email">
 						</div>
 						<div class="form-group">
-							<input type="email" class="form-control px-3 py-4" placeholder="Your Phone">
+							<input type="text" name ="Your Phone" class="form-control px-3 py-4" placeholder="Your Phone">
 						</div>
 						<div class="form-group mb-5">
-							<textarea class="form-control px-3 py-4"cols="30" rows="10" placeholder="Write a Message"></textarea>
+							<textarea class="form-control px-3 py-4"cols="30" rows="10" name ="Write a Message" placeholder="Write a Message"></textarea>
 						</div>
 						<div class="form-group">
-							<input type="submit" class="btn btn-primary  px-4 py-3" value="Send Message">
+							<input type="submit" name ="Send Message" class="btn btn-primary  px-4 py-3" id="submit-form" value="Send Message">
 						</div>
 					</form>
 				</div>
@@ -400,7 +421,18 @@
 	</footer>
 
 
+	<script>
+	const scriptURL = '<https://script.google.com/macros/s/AKfycbwDO-p3iKAPNKnloBxn1mgdDxL-Wc90YtkXgv5vK0NC-FQNMMf6/exec>'
+  const form = document.forms['google-sheet']
 
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
+	})
+</script>
 
 	<script src="js/vendor/jquery.min.js"></script>
 	<script src="js/vendor/jquery-migrate-3.0.1.min.js"></script>
