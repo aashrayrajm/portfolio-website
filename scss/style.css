@@ -400,7 +400,7 @@ a:hover, a:focus, a:active {
 
 .progress .progress-bar span {
   background-color: #bac964;
-  position: absolute;
+  position: relative;
   bottom: -20px;
   font-size: 10px;
   line-height: 10px;
@@ -416,7 +416,7 @@ a:hover, a:focus, a:active {
   content: " ";
   height: 0;
   width: 0;
-  position: absolute;
+  position: relative;
   pointer-events: none;
   border-color: rgba(255, 255, 255, 0);
   border-bottom-color: #bac964;
